@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>널리소프트 개발자 컨퍼런스 발표자료 : 레오</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-color="white">
+					<h1 class="r-fit-text">Nullee</h1>
+					<h2 class="r-fit-text">Developer conference</h2>
+				</section>
+				<section>
+					<section>
+						<h3 class="fragment fade-out" data-fragment-index="1">Frontend</h3>
+						<h3><span class="fragment fade-out" data-fragment-index="1">기능 </span><span class="fragment custom grow-big" data-fragment-index="1">최적화</span><span class="fragment fade-out" data-fragment-index="1"> API</span></h3>
+					</section>
+					<section>
+						<video class="r-stretch" controls>
+							<source data-src="/assets/설정화면.mov" type="video/mp4"></source>
+						</video>
+					</section>
+					<section>
+						<video class="r-stretch" controls>
+							<source data-src="/assets/자료수집완료시.mov" type="video/mp4"></source>
+						</video>
+					</section>
+					<section>
+						<video class="r-stretch" controls>
+							<source data-src="/assets/결제화면.mov" type="video/mp4"></source>
+						</video>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>이야기하고 싶은 것</h3>
+					</section>
+					<section>
+						<ol>
+							<li>
+								<h4>Layout Shift</h4>
+							</li>
+							<li>
+								<h4>Reflow/Repaint</h4>
+							</li>
+							<li>
+								<h4>Loading UI</h4>
+							</li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<img src="/assets/레아아웃시프트.avif">
+				</section>
+				<section>
+					<pre><code data-trim data-noescape data-line-numbers="|2">
+						function test(){
+							console.log('aa');
+						}
+					</code></pre>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

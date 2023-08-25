@@ -1,0 +1,14 @@
+// * {
+//     user-select:none;
+// }
+.reveal [data-korean] {
+    font-family: 'Pretendard Variable', sans-serif;
+}
+
+.fragment.grow-big {
+    display: inline-block;
+    transform-origin: bottom;
+}
+.fragment.grow-big.visible {
+    transform: scale(5) translateY(25%);
+}
