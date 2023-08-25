@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="dist/theme/night.css">
 
 		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="preload" as="font" href="/assets/woff2/PretendardVariable.woff2" crossorigin> -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,11 +47,9 @@
 					</section>
 				</section>
 				<section>
-					<section>
-						<h3>이야기하고 싶은 것</h3>
-					</section>
-					<section>
-						<ol>
+					<div class="r-stack">
+						<h3 class="fragment fade-out fade-up" data-fragment-index="1">이야기하고 싶은 것</h3>
+						<ol class="fragment fade-up" data-fragment-index="1">
 							<li>
 								<h4>Layout Shift</h4>
 							</li>
@@ -61,14 +60,34 @@
 								<h4>Loading UI</h4>
 							</li>
 						</ol>
+					</div>
+					<!-- <section>
 					</section>
+					<section>
+					</section> -->
 				</section>
 				<section>
-					<picture>
+					<picture class="r-stretch">
 						<source srcset="/assets/레아아웃시프트.avif" type="image/avif">
 						<source srcset="/assets/레아아웃시프트.webp" type="image/webp" />
 						<img src="/assets/레아아웃시프트.png">
 					</picture>
+				</section>
+				<section class="reveal-viewport">
+					<div class="r-hstack items-stretch reveal">
+						<img data-src="/assets/메뉴로딩전후.png">
+					</div>
+				</section>
+				<section class="reveal-viewport">
+					<div class="r-hstack items-stretch reveal">
+						<img data-src="/assets/자료수집차이.png">
+					</div>
+				</section>
+				<section class="reveal-viewport">
+					<div class="r-hstack items-stretch reveal">
+						<img data-src="/assets/결제-로딩전중.png">
+						<img data-src="/assets/결제-로딩중후.png">
+					</div>
 				</section>
 				<section>
 					<pre><code data-trim data-noescape data-line-numbers="|2">
