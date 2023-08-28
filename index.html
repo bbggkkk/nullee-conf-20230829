@@ -6,13 +6,13 @@
 
 		<title>널리소프트 개발자 컨퍼런스 발표자료 : 레오</title>
 
-		<link rel="icon" href="/assets/profile.png">
+		<link rel="icon" href="./assets/profile.png">
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/night.css">
 
 		<!-- Theme used for syntax highlighted code -->
-		<!-- <link rel="preload" as="font" href="/assets/woff2/PretendardVariable.woff2" crossorigin> -->
+		<!-- <link rel="preload" as="font" href="./assets/woff2/PretendardVariable.woff2" crossorigin> -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,17 +32,17 @@
 					</section>
 					<section>
 						<video class="r-stretch" controls>
-							<source data-src="/assets/설정화면.mov" type="video/mp4"></source>
+							<source data-src="./assets/설정화면.mov" type="video/mp4"></source>
 						</video>
 					</section>
 					<section>
 						<video class="r-stretch" controls>
-							<source data-src="/assets/자료수집완료시.mov" type="video/mp4"></source>
+							<source data-src="./assets/자료수집완료시.mov" type="video/mp4"></source>
 						</video>
 					</section>
 					<section>
 						<video class="r-stretch" controls>
-							<source data-src="/assets/결제화면.mov" type="video/mp4"></source>
+							<source data-src="./assets/결제화면.mov" type="video/mp4"></source>
 						</video>
 					</section>
 				</section>
@@ -54,47 +54,145 @@
 								<h4>Layout Shift</h4>
 							</li>
 							<li>
-								<h4>Reflow/Repaint</h4>
-							</li>
-							<li>
-								<h4>Loading UI</h4>
+								<h4>Reflow / Repaint</h4>
 							</li>
 						</ol>
 					</div>
-					<!-- <section>
-					</section>
-					<section>
-					</section> -->
+				</section>
+				<section>
+					<h4>Layout Shift</h4>
 				</section>
 				<section>
 					<picture class="r-stretch">
-						<source srcset="/assets/레아아웃시프트.avif" type="image/avif">
-						<source srcset="/assets/레아아웃시프트.webp" type="image/webp" />
-						<img src="/assets/레아아웃시프트.png">
+						<source srcset="./assets/레아아웃시프트.avif" type="image/avif">
+						<source srcset="./assets/레아아웃시프트.webp" type="image/webp" />
+						<img src="./assets/레아아웃시프트.png">
 					</picture>
 				</section>
 				<section class="reveal-viewport">
 					<div class="r-hstack items-stretch reveal">
-						<img data-src="/assets/메뉴로딩전후.png">
+						<img data-src="./assets/메뉴로딩전후.png">
 					</div>
 				</section>
 				<section class="reveal-viewport">
 					<div class="r-hstack items-stretch reveal">
-						<img data-src="/assets/자료수집차이.png">
+						<img data-src="./assets/자료수집차이.png">
 					</div>
 				</section>
 				<section class="reveal-viewport">
 					<div class="r-hstack items-stretch reveal">
-						<img data-src="/assets/결제-로딩전중.png">
-						<img data-src="/assets/결제-로딩중후.png">
+						<img data-src="./assets/결제-로딩전중.png">
+						<img data-src="./assets/결제-로딩중후.png">
 					</div>
 				</section>
 				<section>
-					<pre><code data-trim data-noescape data-line-numbers="|2">
-						function test(){
-							console.log('aa');
-						}
-					</code></pre>
+					<video class="r-stretch" controls>
+						<source data-src="./assets/메뉴슬라이드처리.mp4" type="video/mp4"></source>
+					</video>
+				</section>
+				<section>
+					<video class="r-stretch" controls>
+						<source data-src="./assets/자료수집고정높이처리.mp4" type="video/mp4"></source>
+					</video>
+				</section>
+				<section>
+					<h4>Reflow / Repaint</h4>
+				</section>
+				<section>
+					<video class="r-stretch" controls autoplay>
+						<source data-src="./assets/애니메이션예시.mp4" type="video/mp4"></source>
+					</video>
+				</section>
+				<section>
+					<div class="r-vstack">
+						<picture class="r-stretch">
+							<source srcset="./assets/레이아웃페인트.avif" type="image/avif">
+							<source srcset="./assets/레이아웃페인트.webp" type="image/webp" />
+							<img src="./assets/레이아웃페인트.png">
+						</picture>
+						<picture class="r-stretch">
+							<source srcset="./assets/페인트.avif" type="image/avif">
+							<source srcset="./assets/페인트.webp" type="image/webp" />
+							<img src="./assets/페인트.png">
+						</picture>
+						<picture class="r-stretch">
+							<source srcset="./assets/굿.avif" type="image/avif">
+							<source srcset="./assets/굿.webp" type="image/webp" />
+							<img src="./assets/굿.png">
+						</picture>
+					</div>
+				</section>
+				<section class="reveal-viewport">
+					<div class="r-hstack items-stretch reveal">
+						<img data-src="./assets/렌더링퍼포먼스.png">
+					</div>
+				</section>
+				<section>
+					<div class="r-stack">
+						<img class="fragment fade-out" data-fragment-index="0" src="./assets/60monitor.png">
+						<p class="r-fit-text fragment fade-up fade-in-then-out" data-fragment-index="0">60</p>
+						<div class="r-fit-text fragment fade-up" data-fragment-index="1">
+							<div class="frament fade-up fade-in-then-out" data-fragment-index="3">
+								1<span class="r-stack" style="display:inline-grid;"><p class="fragment fade-down fade-in-then-out" data-fragment-index="1">6</p><p class="fragment fade-down" data-fragment-index="2">0</p></span>ms
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="r-stack">
+						<img class="fragment fade-out" data-fragment-index="0" src="./assets/120phone.png">
+						<p class="r-fit-text fragment fade-up fade-in-then-out" data-fragment-index="0">120</p>
+						<p class="r-fit-text fragment fade-up" data-fragment-index="1">8ms</p>
+					</div>
+				</section>
+				<section>
+					<div class="r-stack">
+						<picture class="r-stretch fragment fade-out" data-fragment-index="1">
+							<source srcset="./assets/레이아웃페인트.avif" type="image/avif">
+							<source srcset="./assets/레이아웃페인트.webp" type="image/webp" />
+							<img src="./assets/레이아웃페인트.png">
+						</picture>
+						<div class="r-vstack fragment fade-up" data-fragment-index="1">
+							<h4 class="">position</h4>
+							<h4 class="">width / height</h4>
+							<h4 class="">margin / padding</h4>
+							<h4 class="">font</h4>
+							<h4 class="">...</h4>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="r-stack">
+						<picture class="r-stretch fragment fade-out" data-fragment-index="1">
+							<source srcset="./assets/페인트.avif" type="image/avif">
+							<source srcset="./assets/페인트.webp" type="image/webp" />
+							<img src="./assets/페인트.png">
+						</picture>
+						<div class="r-vstack fragment fade-up" data-fragment-index="1">
+							<h4 class="">background</h4>
+							<h4 class="">border</h4>
+							<h4 class="">color</h4>
+							<h4 class="">...</h4>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="r-stack">
+						<picture class="r-stretch fragment fade-out" data-fragment-index="1">
+							<source srcset="./assets/굿.avif" type="image/avif">
+							<source srcset="./assets/굿.webp" type="image/webp" />
+							<img src="./assets/굿.png">
+						</picture>
+						<div class="r-vstack fragment fade-up" data-fragment-index="1">
+							<h4 class="">transition</h4>
+							<h4 class="">opacity</h4>
+							<h4 class="">...</h4>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>읽어볼만 한 글</h2>
+					<img class="r-stretch" src="./assets/qr.svg">
 				</section>
 			</div>
 		</div>
