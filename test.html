@@ -16,10 +16,13 @@
                 --danger-color: #eb0e0e;
                 --good-color: #0c9f24;
 
+                --animation-duration: 0.14s;
+
                 font-family: 'Pretendard Variable';
             }
             * {
                 box-sizing: border-box;
+                -webkit-tap-highlight-color: transparent;
             }
 
             #control-panel {
@@ -111,7 +114,8 @@
             <fieldset>
                 <legend></legend>
                 <label>
-                    <input placeholder="" />
+                    <textarea id="input" rows="1"></textarea>
+                    <!-- <input id="input" placeholder="" /> -->
                 </label>
             </fieldset>
             <style>
@@ -131,8 +135,10 @@
                     border: 2px solid rgba(0, 0, 0, 0.18);
                     border-radius: 8px;
 
-                    transition-property: border-color, outline;
-                    transition-duration: 0.14s;
+                    transition-property: border-color;
+                    -webkit-transition-duration: var(--animation-duration);
+                    transition-duration: var(--animation-duration);
+                    transition-timing-function: linear;
                 }
 
                 legend {
@@ -143,14 +149,16 @@
 
                     color: inherit;
 
-                    padding-inline: 0;
+                    padding: 0 0;
                     max-width: 0;
-                    transform: translateY(calc(1em + 0.7em));
+                    transform: translate3d(0, calc(1em + 0.7em), 0);
                     font-size: 1em;
 
-                    transition-property: transform, max-width, padding-inline,
+                    transition-property: transform, max-width, padding,
                         font-size;
-                    transition-duration: 0.14s;
+                    -webkit-transition-duration: var(--animation-duration);
+                    transition-duration: var(--animation-duration);
+                    transition-timing-function: linear;
 
                     pointer-events: none;
                     user-select: none;
@@ -162,18 +170,21 @@
                     cursor: text;
                     padding: 1em;
                 }
-                input {
+                input,
+                textarea {
+                    resize: none;
                     font-family: 'Pretendard Variable';
                     font-size: 1em;
                     border: 0;
                     display: block;
                     width: 100%;
                     background-color: transparent;
+                    -webkit-line-clamp: 10;
                 }
-                input:focus {
+                :where(input, textarea):focus {
                     outline: 0;
                 }
-                input::placeholder {
+                :where(input, textarea)::placeholder {
                     visibility: hidden;
                 }
 
@@ -181,20 +192,18 @@
                     border-color: var(--primary-color);
                 }
                 fieldset:focus-within legend,
-                fieldset:has(input:not(:placeholder-shown)) legend {
-                    padding-inline: 0.5em;
-                    max-width: unset;
-                    transform: translateY(0);
+                fieldset:has(:where(input, textarea):not(:placeholder-shown))
+                    legend {
+                    padding: 0 0.5em;
+                    max-width: 100%;
+                    transform: translate3d(0, 0, 0);
                     font-size: 0.75em;
                 }
 
-                fieldset:has(input:invalid) {
+                fieldset:has(:where(input:invalid, textarea:invalid)) {
                     border-color: var(--danger-color);
                     color: var(--danger-color);
                 }
-                /* fieldset:has(input:not(:placeholder-shown):valid):focus-within {
-                border-color:var(--good-color);
-            } */
             </style>
         </template>
 
@@ -211,13 +220,14 @@
                     const dom = document
                         .querySelector('#s-input')
                         .content.cloneNode(true);
-                    const input = dom.querySelector('input');
+                    const input = dom.querySelector('#input');
                     for (const { name, value } of this.attributes) {
                         input.setAttribute(name, value);
                     }
                     dom.querySelector('legend').innerText =
                         this.placeholder ?? '';
                     this.shadowRoot.append(dom);
+                    this.setEvent();
                 }
 
                 get placeholder() {
@@ -225,6 +235,16 @@
                 }
                 set placeholder(value) {
                     this.setAttribute('placeholder', value);
+                }
+
+                setEvent() {
+                    const input = this.shadowRoot.querySelector('#input');
+                    input.addEventListener('input', (e) => {
+                        requestAnimationFrame(() => {
+                            input.style.height = '0px';
+                            input.style.height = `${input.scrollHeight}px`;
+                        });
+                    });
                 }
             }
 
@@ -235,9 +255,9 @@
                 root.style.setProperty('--primary-color', color);
             }
 
-            document
-                .querySelector('input[type="color"]')
-                .addEventListener('input', PrimaryColorChangedHandler);
+            // document
+            //     .querySelector('input[type="color"]')
+            //     .addEventListener('input', PrimaryColorChangedHandler);
         </script>
     </body>
 </html>
