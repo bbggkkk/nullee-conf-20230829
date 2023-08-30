@@ -1,86 +1,97 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css" />
-    <style>
-        :root {
-            font-size:16px;
-            --primary-color:#1167AB;
-            --danger-color:#eb0e0e;
-            --good-color:#0c9f24;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+        <style>
+            :root {
+                font-size: 16px;
+                --primary-color: #1167ab;
+                --danger-color: #eb0e0e;
+                --good-color: #0c9f24;
 
-            font-family: "Pretendard Variable";
-        }
-        * {
-            box-sizing: border-box;
-        }
+                font-family: 'Pretendard Variable';
+            }
+            * {
+                box-sizing: border-box;
+            }
 
-        #control-panel {
-            position:absolute;
-            top:0;
-            left:0;
-            padding:16px;
-        }
+            #control-panel {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 16px;
+            }
 
-        #frame {
-            position: absolute;
-            top:50%;
-            left:50%;
-            transform: translate(-50%, -50%);
-            
-            width:390px;
-            height:844px;
+            #frame {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
 
-            border-radius:24px;
-            border:8px solid rgba(0,0,0,0.24);
+                width: 390px;
+                height: 844px;
 
-            box-sizing: content-box;
-        }
-        /* form {
+                border-radius: 24px;
+                border: 8px solid rgba(0, 0, 0, 0.24);
+
+                box-sizing: content-box;
+            }
+            /* form {
             padding:24px;
         } */
 
-        form {
-            display:flex;
-            flex-direction: column;
-            gap:1em;
-        }
-        fieldset {
-            display:flex;
-            flex-direction: column;
-            gap:1em;
-            border:0;
-            padding:16px;
-            margin:0;
-        }
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+            }
+            fieldset {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                border: 0;
+                padding: 16px;
+                margin: 0;
+            }
 
-        fieldset legend {
-            font-size: 24px;
-            transform: translateY(24px);
-            margin-bottom: 24px;
-        }
-    </style>
-</head>
-<body>
-    
-    <form>
-        <fieldset>
-            <legend>사용자 정보</legend>
-            <s-input placeholder="이름"></s-input>
-            <s-input placeholder="전화번호" pattern="\d{10,11}" type="tel" maxlength="11"></s-input>
-            <s-input placeholder="생년월일" pattern="\d{8}" type="birth" maxlength="8"></s-input>
-        </fieldset>
-        <fieldset>
-            <legend>추가 정보</legend>
-            <s-input placeholder="주소"></s-input>
-            <s-input placeholder="자기소개"></s-input>
-        </fieldset>
-    </form>
+            fieldset legend {
+                font-size: 24px;
+                transform: translateY(24px);
+                margin-bottom: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>사용자 정보</legend>
+                <s-input placeholder="이름"></s-input>
+                <s-input
+                    placeholder="전화번호"
+                    pattern="\d{10,11}"
+                    type="tel"
+                    maxlength="11"></s-input>
+                <s-input
+                    placeholder="생년월일"
+                    pattern="\d{8}"
+                    type="birth"
+                    maxlength="8"></s-input>
+            </fieldset>
+            <fieldset>
+                <legend>추가 정보</legend>
+                <s-input placeholder="주소"></s-input>
+                <s-input placeholder="자기소개"></s-input>
+            </fieldset>
+        </form>
 
-    <!-- <div id="control-panel">
+        <!-- <div id="control-panel">
         <p>Primary Color</p>
         <input type="color">
     </div>
@@ -96,133 +107,137 @@
         </form>
     </div> -->
 
-    <template id="s-input">
-        <fieldset>
-            <legend></legend>
-            <label>
-                <input placeholder="">
-            </label>
-        </fieldset>
-        <style>
-            :host {
-                display:block;
-            }
-            * {
-                margin:0;
-                padding:0;
-                box-sizing: border-box;
-            }
-            fieldset {
-                width:100%;
+        <template id="s-input">
+            <fieldset>
+                <legend></legend>
+                <label>
+                    <input placeholder="" />
+                </label>
+            </fieldset>
+            <style>
+                :host {
+                    display: block;
+                }
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                fieldset {
+                    width: 100%;
 
-                padding:0;
-                margin:0;
-                border: 2px solid rgba(0,0,0,0.18);
-                border-radius:8px;
+                    padding: 0;
+                    margin: 0;
+                    border: 2px solid rgba(0, 0, 0, 0.18);
+                    border-radius: 8px;
 
-                transition-property: border-color, outline;
-                transition-duration: 0.14s;
-            }
+                    transition-property: border-color, outline;
+                    transition-duration: 0.14s;
+                }
 
-            legend {
-                position:relative;
-                line-height: 0;
-                height: 0;
-                margin-left:1em;
+                legend {
+                    position: relative;
+                    line-height: 0;
+                    height: 0;
+                    margin-left: 1em;
 
-                color:inherit;
-                
-                padding-inline: 0;
-                max-width: 0;
-                transform: translateY(calc(1em + 0.7em));
-                font-size:1em;
+                    color: inherit;
 
-                transition-property: transform, max-width, padding-inline, font-size;
-                transition-duration: 0.14s;
+                    padding-inline: 0;
+                    max-width: 0;
+                    transform: translateY(calc(1em + 0.7em));
+                    font-size: 1em;
 
-                pointer-events: none;
-                user-select: none;
-                white-space: nowrap;
-            }
-            label {
-                display:block;
-                width:100%;
-                cursor: text;
-                padding: 1em;
-            }
-            input {
-                font-family: "Pretendard Variable";
-                font-size: 1em;
-                border:0;
-                display:block;
-                width:100%;
-                background-color: transparent;
-            }
-            input:focus {
-                outline:0;
-            }
-            input::placeholder {
-                visibility:hidden;
-            }
+                    transition-property: transform, max-width, padding-inline,
+                        font-size;
+                    transition-duration: 0.14s;
 
+                    pointer-events: none;
+                    user-select: none;
+                    white-space: nowrap;
+                }
+                label {
+                    display: block;
+                    width: 100%;
+                    cursor: text;
+                    padding: 1em;
+                }
+                input {
+                    font-family: 'Pretendard Variable';
+                    font-size: 1em;
+                    border: 0;
+                    display: block;
+                    width: 100%;
+                    background-color: transparent;
+                }
+                input:focus {
+                    outline: 0;
+                }
+                input::placeholder {
+                    visibility: hidden;
+                }
 
-            
-            fieldset:focus-within {
-                border-color:var(--primary-color);
-            }
-            fieldset:focus-within legend, fieldset:has(input:not(:placeholder-shown)) legend {
-                padding-inline: 0.5em;
-                max-width: unset;
-                transform: translateY(0);
-                font-size: 0.75em;
-            }
-            
-            fieldset:has(input:invalid) {
-                border-color:var(--danger-color);
-                color:var(--danger-color);
-            }
-            /* fieldset:has(input:not(:placeholder-shown):valid):focus-within {
+                fieldset:focus-within {
+                    border-color: var(--primary-color);
+                }
+                fieldset:focus-within legend,
+                fieldset:has(input:not(:placeholder-shown)) legend {
+                    padding-inline: 0.5em;
+                    max-width: unset;
+                    transform: translateY(0);
+                    font-size: 0.75em;
+                }
+
+                fieldset:has(input:invalid) {
+                    border-color: var(--danger-color);
+                    color: var(--danger-color);
+                }
+                /* fieldset:has(input:not(:placeholder-shown):valid):focus-within {
                 border-color:var(--good-color);
             } */
-        </style>
-    </template>
+            </style>
+        </template>
 
-    
-    <script>
-        const root = document.querySelector(':root');
-        const rootStyle = getComputedStyle(root);
+        <script>
+            const root = document.querySelector(':root');
+            const rootStyle = getComputedStyle(root);
 
-        class SInput extends HTMLElement {
-            constructor(){
-                super();
-            }
-            connectedCallback(){
-                this.attachShadow({mode:'open'});
-                const dom = document.querySelector('#s-input').content.cloneNode(true);
-                const input = dom.querySelector('input');
-                for(const {name, value} of this.attributes){
-                    input.setAttribute(name, value);
+            class SInput extends HTMLElement {
+                constructor() {
+                    super();
                 }
-                dom.querySelector('legend').innerText = this.placeholder ?? '';
-                this.shadowRoot.append(dom);
+                connectedCallback() {
+                    this.attachShadow({ mode: 'open' });
+                    const dom = document
+                        .querySelector('#s-input')
+                        .content.cloneNode(true);
+                    const input = dom.querySelector('input');
+                    for (const { name, value } of this.attributes) {
+                        input.setAttribute(name, value);
+                    }
+                    dom.querySelector('legend').innerText =
+                        this.placeholder ?? '';
+                    this.shadowRoot.append(dom);
+                }
+
+                get placeholder() {
+                    return this.getAttribute('placeholder');
+                }
+                set placeholder(value) {
+                    this.setAttribute('placeholder', value);
+                }
             }
 
-            get placeholder(){
-                return this.getAttribute('placeholder');
+            customElements.define('s-input', SInput);
+
+            function PrimaryColorChangedHandler(event) {
+                const color = event.target.value;
+                root.style.setProperty('--primary-color', color);
             }
-            set placeholder(value){
-                this.setAttribute('placeholder', value);
-            }
-        }
 
-        customElements.define('s-input', SInput);
-
-        function PrimaryColorChangedHandler(event) {
-            const color = event.target.value;
-            root.style.setProperty('--primary-color', color);
-        }
-
-        document.querySelector('input[type="color"]').addEventListener('input', PrimaryColorChangedHandler)
-    </script>
-</body>
+            document
+                .querySelector('input[type="color"]')
+                .addEventListener('input', PrimaryColorChangedHandler);
+        </script>
+    </body>
 </html>
