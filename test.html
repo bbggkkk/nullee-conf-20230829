@@ -58,7 +58,7 @@
             fieldset {
                 display: flex;
                 flex-direction: column;
-                gap: 1em;
+                gap: 0.5em;
                 border: 0;
                 padding: 16px;
                 margin: 0;
@@ -114,8 +114,8 @@
             <fieldset>
                 <legend></legend>
                 <label>
-                    <textarea id="input" rows="1"></textarea>
-                    <!-- <input id="input" placeholder="" /> -->
+                    <!-- <textarea id="input" rows="1"></textarea> -->
+                    <input id="input" placeholder="" />
                 </label>
             </fieldset>
             <style>
@@ -132,6 +132,7 @@
 
                     padding: 0;
                     margin: 0;
+                    margin-top:0.25em;
                     border: 2px solid rgba(0, 0, 0, 0.18);
                     border-radius: 8px;
 
@@ -227,7 +228,7 @@
                     dom.querySelector('legend').innerText =
                         this.placeholder ?? '';
                     this.shadowRoot.append(dom);
-                    this.setEvent();
+                    // this.setEvent();
                 }
 
                 get placeholder() {
